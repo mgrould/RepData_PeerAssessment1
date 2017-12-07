@@ -7,6 +7,7 @@
 library(plyr)
 library(dplyr)
 library(lattice)
+library(knitr)
 ```
 
 - Load the data
@@ -67,7 +68,7 @@ tail(data_StepsInterval)
 ```
 
 - Make a time series plot (i.e type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
-```{R Time series plot}
+```{R Time_series_plot}
 plot(data_StepsInterval$interval, data_StepsInterval$steps, type = "l",
      xlab = "Time [in 5-minutes interval]", ylab = "Average number of steps", 
      main = "Average daily activity pattern")
@@ -102,7 +103,7 @@ tail(new_data)
 ```
 
 - Make a histogram of the total number of steps taken each day.
-```{R Histogram of the total number of steps taken each day with new_data}
+```{R Histogram_2}
 new_data_StepsDay <- new_data %>%
         group_by(date) %>%
         summarise(steps=sum(steps)) %>%
@@ -134,7 +135,7 @@ levels(new_data2$days) <- c("weekday", "weekday", "weekend", "weekend",
 ```
 
 - Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
-```{R Time series plot with new_data2}
+```{R Time_series2}
 new_data_StepsIntervalDays <- new_data2 %>%
     group_by(interval, days) %>%
     summarise(steps = mean(steps)) %>%

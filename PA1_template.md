@@ -7,7 +7,35 @@
 ```r
 library(plyr)
 library(dplyr)
+```
+
+```
+## 
+## Attaching package: 'dplyr'
+```
+
+```
+## The following objects are masked from 'package:plyr':
+## 
+##     arrange, count, desc, failwith, id, mutate, rename, summarise,
+##     summarize
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+```
+
+```
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+```
+
+```r
 library(lattice)
+library(knitr)
 ```
 
 - Load the data
@@ -144,7 +172,7 @@ plot(data_StepsInterval$interval, data_StepsInterval$steps, type = "l",
      main = "Average daily activity pattern")
 ```
 
-![plot of chunk Time series plot](figure/Time series plot-1.png)
+![plot of chunk Time_series_plot](figure/Time_series_plot-1.png)
 
 - Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -240,7 +268,7 @@ hist(new_data_StepsDay$steps, breaks = 10, xlab = "Steps per day",
 rug(new_data_StepsDay$steps, col='red')
 ```
 
-![plot of chunk Histogram of the total number of steps taken each day with new_data](figure/Histogram of the total number of steps taken each day with new_data-1.png)
+![plot of chunk Histogram_2](figure/Histogram_2-1.png)
 
 - Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
@@ -284,4 +312,4 @@ xyplot(new_data_StepsIntervalDays$steps ~ new_data_StepsIntervalDays$interval | 
        layout=c(1,2))
 ```
 
-![plot of chunk Time series plot with new_data2](figure/Time series plot with new_data2-1.png)
+![plot of chunk Time_series2](figure/Time_series2-1.png)
